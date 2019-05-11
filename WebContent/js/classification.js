@@ -1,0 +1,14 @@
+$(document).ready(function(){
+	$("#classificationform").submit(function(event){
+		event.preventDefault();
+		//console.log($("#classificationform").serialize());
+		$.ajax({
+			url:'ClassificationControllers',
+			type:'post',
+			data:$("#classificationform").serialize(),
+			success:function(data){
+				alert(data);
+			}
+		});
+	});
+});
