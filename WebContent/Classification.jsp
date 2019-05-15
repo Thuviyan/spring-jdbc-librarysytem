@@ -31,7 +31,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <input type="submit" value="submit"/>
+        <button type="submit" value="submit" class="btn btn-primary" >Save</button>
       </div>
        </form>
     </div>
@@ -39,7 +39,7 @@
 </div>
 
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="showtable">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -48,17 +48,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td><button type="button" class="btn btn-success">Edit</button>
-      <button type="button" class="btn btn-danger">Delete</button></td>
-    </tr>
-    
+   
   </tbody>
   
 </table>
-
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/classification.js" >
 </script>
 <%@include file="Fragments/Footer.jsp" %>

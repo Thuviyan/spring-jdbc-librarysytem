@@ -62,6 +62,36 @@ public class ClassificationDAOImpl implements ClassificationDAO {
 	@Override
 	public Integer deleteClassification(Integer classificationId) {
 		// TODO Auto-generated method stub
+		Connection conn= null;
+		PreparedStatement ps= null;
+		
+		try {
+			conn=datasource.getConnection();
+			String SQL="DELETE FROM classification WHERE classification_id=?";
+			ps=conn.prepareStatement(SQL);
+			
+			String cid=Integer.toString(classificationId);
+			ps.setString(1, cid);
+			
+			int executeUpdate=ps.executeUpdate();
+			if(executeUpdate>0) {
+				System.out.println("classification is Deleted");
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		return null;
 	}
 
@@ -99,7 +129,7 @@ public class ClassificationDAOImpl implements ClassificationDAO {
 		}
 		
 		
-		return null;
+		return classificationList;
 	}
 
 	@Override
